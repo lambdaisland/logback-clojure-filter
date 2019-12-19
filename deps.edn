@@ -1,0 +1,14 @@
+{:paths ["src" "test" "resources"]
+ :deps  {org.clojure/clojure {:mvn/version "1.10.1"}
+         ch.qos.logback/logback-classic {:exclusions [org.slf4j/slf4j-api org.slf4j/slf4j-nop]
+                                         :mvn/version "1.2.3"}}
+ :aliases
+ {:dev
+  {}
+
+  :test
+  {:extra-deps {lambdaisland/kaocha {:mvn/version "0.0-554"}}}
+
+  :compile
+  {:main-opts ["-e" "(compile 'lambdaisland.logback.clojure-filter)"]}
+  }}
